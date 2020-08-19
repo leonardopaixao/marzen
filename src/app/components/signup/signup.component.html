@@ -1,0 +1,72 @@
+<div class="container">
+	<div class="signUpCard">
+		<form #signupForm="ngForm">
+
+			<h2 class="heading" style="color: black">Register</h2>
+			<hr>
+
+			<div class="row">
+				<div class="col-xs-6" style="width: 49%; height: 15%; float: left">
+					<input
+						type="firstName"
+						name="firstName"
+						placeholder="First Name"
+						[(ngModel)]="firstName"
+						class="formInput"
+						maxlength="15"
+						required	
+					/>		
+				</div>
+
+				<div class="col-xs-6" style="width: 49%; height: 15%; float: right">
+					<input
+						type="lastName"
+						name="lastName"
+						placeholder="Last Name"
+						[(ngModel)]="lastName"
+						class="formInput"
+						maxlength="20"
+						required	
+					/>
+				</div>
+			</div>
+
+			<input
+				type="email"
+				name="email"
+				placeholder="Email"
+				[(ngModel)]="email"
+				class="formInput"
+				maxlength="60"
+				required	
+			/>
+
+			<input
+			name="userName"
+			placeholder="Username"
+			[(ngModel)]="userName"
+			class="formInput"
+			maxlength="12"
+			required
+			/>
+
+			<input
+				type="password"
+				name="password"
+				placeholder="Password"
+				[(ngModel)]="password"
+				class="formInput"
+				required
+			/>
+
+			<button
+				[disabled]="!signupForm.form.valid"
+				type="submit"
+				(click)="signUp()"
+				class="btn"
+				id="btn-signUp"
+			>Sign Up</button>
+			<span style="color: red; padding-left: 56px;">{{errorMsg}}</span>
+		</form>
+	</div>
+</div>
