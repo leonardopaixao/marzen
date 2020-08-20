@@ -28,6 +28,7 @@ import { AuthService } from './services/auth.service';
 
 // environment
 import { environment } from '../environments/environment';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { environment } from '../environments/environment';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,

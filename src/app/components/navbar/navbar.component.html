@@ -1,13 +1,25 @@
-<header class="masthead">
+<header class="masthead" style="position: fixed; top: 10px; width: 50%;">
   <div class="inner">
-      <h3 class="masthead-brand">
-          <img src="assets/images/logo_marzen_verde.png" alt="Home" width="200" height="45">
-      </h3>
-      <nav class="nav nav-masthead justify-content-center">
+    <div class="body">
+      <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
+      <label for="openSidebarMenu" class="sidebarIconToggle">
+          <div class="spinner diagonal part-1"></div>
+          <div class="spinner horizontal"></div>
+          <div class="spinner diagonal part-2"></div>
+      </label>
+      <div id="sidebarMenu">
+            <div class="main-content-wrapper">
+              <a *ngIf="!(user|async)?.uid" class="nav-link" href="login">Entrar</a>
+              <a *ngIf="!(user|async)?.uid" class="nav-link" href="signup">Registrar</a>
+              <a *ngIf="(user|async)?.uid" class="nav-link" routerLink="login" (click)="logout()">Sair</a>
+            </div>
+        </div>
+    </div>
+      <!-- <nav class="nav nav-masthead justify-content-center">
           <a *ngIf="!(user|async)?.uid" class="nav-link" href="login">Login</a>
           <a *ngIf="!(user|async)?.uid" class="nav-link" href="signup">Signup</a>
           <a *ngIf="(user|async)?.uid" class="nav-link" routerLink="login" (click)="logout()">Logout</a>
-      </nav>
+      </nav> -->
   </div>
 </header>
 
@@ -18,7 +30,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active" style="padding-top: 6px;">

@@ -16,15 +16,7 @@ export class LoginComponent{
 	public email = new FormControl('', [Validators.required, Validators.email]);
 	public errorMsg : string = '';
 	
-	constructor( private authService: AuthService, private router: Router ){
-		authService.authUser().subscribe( e => {
-			if( e ){
-				if( e.uid ){
-					router.navigate(['']);
-				}
-			}
-		});
-	}
+	constructor( private authService: AuthService, private router: Router ){ }
 
 	form: FormGroup = new FormGroup({
 		password: new FormControl(''),

@@ -31,6 +31,7 @@ export class AuthService {
 
 	public logout(){
 		this.afAuth.signOut();
+		this.router.navigate(['login']);
 	}
 
 	public login(email: string, password: string){
@@ -39,6 +40,7 @@ export class AuthService {
 					if( firebaseUser ){
 						this.authState = firebaseUser;
 						console.log('User logged!');
+						this.router.navigate(['schedule']);
 					}
 				});
 	}
